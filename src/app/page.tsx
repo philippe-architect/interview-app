@@ -1,95 +1,46 @@
-import Image from "next/image";
+"use client";
+
+import Box from "@mui/joy/Box";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function Page() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <App />
     </main>
   );
+}
+
+/**
+ * Components:
+ * Box: https://mui.com/joy-ui/react-box/
+ * Typography (Text): https://mui.com/joy-ui/react-typography/
+ * Table: https://mui.com/joy-ui/react-table/
+ * IconButton: https://mui.com/joy-ui/react-button/
+ */
+
+/**
+ * Coins URL: https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Csolana&vs_currencies=usd&include_market_cap=false&include_24hr_vol=true&include_24hr_change=true
+ * Returns:
+ *  {
+      bitcoin: {
+        usd: 71570,
+        usd_24h_vol: 49440544488.59039,
+        usd_24h_change: 2.4611434646956756,
+      },
+      ethereum: {
+        usd: 4026.91,
+        usd_24h_vol: 27346309400.76205,
+        usd_24h_change: 1.9708458132132054,
+      },
+      solana: {
+        usd: 148.39,
+        usd_24h_vol: 5095097371.316193,
+        usd_24h_change: 0.8289188226562607,
+      },
+    }
+ */
+
+function App() {
+  return <Box flexDirection="column" justifyContent="center" padding={8} />;
 }
